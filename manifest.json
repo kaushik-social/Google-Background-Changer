@@ -1,0 +1,33 @@
+{
+  "name": "Google Background Changer",
+  "version": "1.0",
+  "description": "Changes the background color of google.com",
+  "permissions": [
+      "storage" 
+  ],
+  "host_permissions": [
+      "<all_urls>"
+  ],
+  "icons": {
+      "16": "icons/brush16.png",
+      "32": "icons/brush32.png",
+      "48": "icons/brush48.png",
+      "128": "icons/brush128.png"
+  },
+  "content_scripts": [
+      {
+          "matches": [ "https://www.google.com/" ],
+          "js": [ "content/content.js" ],
+          "css": [ "content/content.css" ]
+      }
+  ],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_icon": "icons/brush128.png",
+      "default_title": "Google Background Changer",
+      "default_popup": "popup/popup.html"
+  },
+  "manifest_version": 3
+}
